@@ -4,7 +4,7 @@ return [
     'default' => [
         'math' => false,
         'logic' => true,
-        'width' => 350,
+        'width' => 300,
         'height' => 80,
     ],
 

@@ -104,9 +104,9 @@ Route::any('captcha-test', function(Request $request) {
     $form .= '</form>';
 
     $form .= '<script
-			  src="https://code.jquery.com/jquery-3.4.1.min.js"
-			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-			  crossorigin="anonymous"></script>';
+	     src="https://code.jquery.com/jquery-3.4.1.min.js"
+	     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+	     crossorigin="anonymous"></script>';
 
     $form .= '<script src="' . asset('vendor/logic-captcha/js/captcha_reload.js') . '"></script>';
 

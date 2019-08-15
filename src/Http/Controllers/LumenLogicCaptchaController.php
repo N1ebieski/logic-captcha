@@ -26,6 +26,13 @@ class LumenLogicCaptchaController extends Controller
         return $captcha->setId($request->get('captcha_id'))->create($config);
     }
 
+    /**
+     * [getCaptchaBase64 description]
+     * @param  LogicCaptcha   $captcha [description]
+     * @param  string         $config  [description]
+     * @param  CaptchaRequest $request [description]
+     * @return JsonResponse            [description]
+     */
     public function getCaptchaBase64(LogicCaptcha $captcha, string $config = 'default', CaptchaRequest $request) : JsonResponse
     {
         $output = app('captcha')->setId($request->get('captcha_id'))->create($config, true);

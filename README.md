@@ -114,7 +114,7 @@ Route::any('captcha-test', function(Request $request) {
 });
 ```
 
-##Copyright and License
+## Copyright and License
 
 Base package [Captcha for Laravel 5](https://github.com/mewebstudio/captcha) was written by [Muharrem ERİN](https://github.com/mewebstudio).
 

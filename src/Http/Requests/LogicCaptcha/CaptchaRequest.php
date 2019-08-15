@@ -18,7 +18,7 @@ class CaptchaRequest extends FormRequest
 
     protected function prepareForValidation()
     {
-        if ($this->has('captcha_id') && empty($this->get('captcha_id'))) {
+        if ($this->has('captcha_id') && strlen($this->get('captcha_id')) == 0) {
             $this->merge([
                 'captcha_id' => null
             ]);

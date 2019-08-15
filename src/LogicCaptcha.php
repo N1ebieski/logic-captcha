@@ -55,12 +55,13 @@ class LogicCaptcha extends Captcha
     protected function text() : void
     {
         if ($this->isLogic()) {
-            $marginTop = $this->image->height() / $this->length;
-
             $words = (array)explode(' ', $this->text);
 
-            $this->textLeftPadding = 40;
-            $this->length = count($words) + 1;
+            $this->textLeftPadding = 10;
+            $this->length = count($words);
+
+            $marginTop = $this->image->height() / count($words);
+            debug($marginTop);
 
             foreach ($words as $key => $char) {
                 $marginLeft = $this->textLeftPadding + ($key * ($this->image->width() - $this->textLeftPadding) / $this->length);

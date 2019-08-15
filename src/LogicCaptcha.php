@@ -61,7 +61,6 @@ class LogicCaptcha extends Captcha
             $this->length = count($words);
 
             $marginTop = $this->image->height() / count($words);
-            debug($marginTop);
 
             foreach ($words as $key => $char) {
                 $marginLeft = $this->textLeftPadding + ($key * ($this->image->width() - $this->textLeftPadding) / $this->length);

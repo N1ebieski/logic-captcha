@@ -16,6 +16,15 @@ class CaptchaRequest extends FormRequest
         return true;
     }
 
+    protected function prepareForValidation()
+    {
+        if ($this->has('captcha_id') && empty($this->get('captcha_id'))) {
+            $this->merge([
+                'captcha_id' => null
+            ]);
+        }
+    }
+
     /**
      * Get the validation rules that apply to the request.
      *

@@ -1,0 +1,35 @@
+{
+    "name": "n1ebieski/logic-captcha",
+    "description": "Laravel 5 Logic Captcha Package",
+	"keywords": ["laravel5 Captcha", "laravel5 Security", "Captcha", "laravel logic captcha"],
+	"homepage": "https://github.com/N1ebieski/laravel-logic-captcha",
+    "type": "package",
+    "require": {
+        "mews/captcha": "2.2.9"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mariusz Wysokiński N1ebieski",
+            "email": "kontakt@intelekt.net.pl",
+            "homepage": "https://github.com/N1ebieski",
+			"role": "Developer"
+        }
+    ],
+    "autoload": {
+		"psr-4": {
+			"N1ebieski\\LogicCaptcha\\": "src/"
+		},
+		"files": [
+			"src/helpers.php"
+		]
+	},
+    "minimum-stability": "dev",
+    "extra": {
+		"laravel": {
+			"providers": [
+				"N1ebieski\\LogicCaptcha\\LogicCaptchaServiceProvider"
+			]
+		}
+	}
+}

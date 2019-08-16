@@ -54,7 +54,7 @@ return [
 
 ## Example Usage
 
-Simple example. Of course, I suggest using the form requests, route-controller-view and assets minified by webpack.
+Simple example. Of course, I suggest using the form requests, route-controller-view pattern and assets minified by webpack.
 
 ```php
 use Illuminate\Http\Request;

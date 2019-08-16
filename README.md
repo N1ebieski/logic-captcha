@@ -25,7 +25,7 @@ php artisan vendor:publish --provider="N1ebieski\LogicCaptcha\LogicCaptchaServic
 
 ## Configuration
 
-`config/captcha.php`
+`config/logic_captcha.php`
 
 ```php
 return [

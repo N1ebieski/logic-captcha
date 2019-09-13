@@ -28,7 +28,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "N1ebieski\\LogicCaptcha\\LogicCaptchaServiceProvider"
+                "N1ebieski\\LogicCaptcha\\Providers\\LogicCaptchaServiceProvider"
             ]
         }
     }

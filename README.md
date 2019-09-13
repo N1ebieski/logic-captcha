@@ -17,7 +17,7 @@ composer require n1ebieski/logic-captcha
 
 2. Publish the configuration file, resources and assets via artisan:
 ```
-php artisan vendor:publish --provider="N1ebieski\LogicCaptcha\LogicCaptchaServiceProvider"
+php artisan vendor:publish --provider="N1ebieski\LogicCaptcha\Providers\LogicCaptchaServiceProvider"
 ```
 
 ## Preview
@@ -108,7 +108,7 @@ Route::any('captcha-test', function(Request $request) {
 	     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
 	     crossorigin="anonymous"></script>';
 
-    $form .= '<script src="' . asset('vendor/logic-captcha/js/captcha_reload.js') . '"></script>';
+    $form .= '<script src="' . asset('js/vendor/logic-captcha/captcha_reload.js') . '"></script>';
 
     return $form;
 });

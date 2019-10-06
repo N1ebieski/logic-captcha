@@ -76,6 +76,6 @@ class LogicCaptcha implements Rule
      */
     public function message()
     {
-        return trans('logic_captcha::validation.failed');
+        return trans('logic-captcha::validation.failed');
     }
 }

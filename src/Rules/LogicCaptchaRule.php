@@ -11,7 +11,7 @@ use N1ebieski\LogicCaptcha\Events\CaptchaValidateDone;
 /**
  * [Recaptcha_v2 description]
  */
-class LogicCaptcha implements Rule
+class LogicCaptchaRule implements Rule
 {
     /**
      * Captcha Id

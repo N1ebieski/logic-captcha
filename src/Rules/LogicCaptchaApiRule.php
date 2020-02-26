@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 /**
  * [Recaptcha_v2 description]
  */
-class LogicCaptchaApi implements Rule
+class LogicCaptchaApiRule implements Rule
 {
     /**
      * Captcha Key

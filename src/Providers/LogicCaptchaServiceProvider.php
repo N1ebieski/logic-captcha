@@ -16,7 +16,7 @@ class LogicCaptchaServiceProvider extends CaptchaServiceProvider
      *
      * @return null
      */
-    public function boot()
+    public function boot() : void
     {
         parent::boot();
 
@@ -65,9 +65,9 @@ class LogicCaptchaServiceProvider extends CaptchaServiceProvider
         $this->loadTranslationsFrom(__DIR__ . '/../../resources/lang', 'logic-captcha');
 
         // Custom rules
-        $this->app['validator']->extend('captcha', \N1ebieski\LogicCaptcha\Rules\LogicCaptcha::class);
+        $this->app['validator']->extend('captcha', \N1ebieski\LogicCaptcha\Rules\LogicCaptchaRule::class);
 
-        $this->app['validator']->extend('captcha_api', \N1ebieski\LogicCaptcha\Rules\LogicCaptchaApi::class);
+        $this->app['validator']->extend('captcha_api', \N1ebieski\LogicCaptcha\Rules\LogicCaptchaApiRule::class);
     }
 
     /**
@@ -75,7 +75,7 @@ class LogicCaptchaServiceProvider extends CaptchaServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register() : void
     {
         parent::register();
 

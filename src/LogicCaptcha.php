@@ -165,7 +165,7 @@ class LogicCaptcha extends Captcha
         return [
             'value' => (string)$question,
             'sensitive' => $this->sensitive,
-            'key' => $hash
+            'key' => json_encode($hash)
         ];
     }
 

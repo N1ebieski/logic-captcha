@@ -92,7 +92,7 @@ class LogicCaptcha extends Captcha
             $config = parent::generate();
         }
 
-        $this->addIdToSession($config['key']);
+        $this->addIdToSession(json_decode($config['key']));
 
         return $config;
     }
@@ -167,6 +167,24 @@ class LogicCaptcha extends Captcha
             'sensitive' => $this->sensitive,
             'key' => json_encode($hash)
         ];
+    }
+
+    /**
+     * Undocumented function
+     *
+     * @param string $config
+     * @param boolean $api
+     * @return void
+     */
+    public function create(string $config = 'default', bool $api = false)
+    {
+        $create = parent::create($config, $api);
+
+        if (is_array($create)) {
+            $create['key'] = json_decode($create['key']);
+        }
+
+        return $create;
     }
 
     /**

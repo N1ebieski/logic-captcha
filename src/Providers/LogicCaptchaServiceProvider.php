@@ -5,10 +5,6 @@ namespace N1ebieski\LogicCaptcha\Providers;
 use Mews\Captcha\CaptchaServiceProvider;
 use N1ebieski\LogicCaptcha\LogicCaptcha;
 
-/**
- * [LogicCaptchaServiceProvider description]
- * @package N1ebieski\LogicCaptcha
- */
 class LogicCaptchaServiceProvider extends CaptchaServiceProvider
 {
     /**
@@ -16,11 +12,10 @@ class LogicCaptchaServiceProvider extends CaptchaServiceProvider
      *
      * @return null
      */
-    public function boot() : void
+    public function boot(): void
     {
         parent::boot();
 
-        // Routes
         if (strpos($this->app->version(), 'Lumen') !== false) {
             $this->app->get('captcha[/api/{config}]', 'N1ebieski\LogicCaptcha\Http\Controllers\LumenLogicCaptchaController@getCaptchaApi');
             $this->app->get('captcha[/{config}]', 'N1ebieski\LogicCaptcha\Http\Controllers\LumenLogicCaptchaController@getCaptcha');
@@ -75,13 +70,14 @@ class LogicCaptchaServiceProvider extends CaptchaServiceProvider
      *
      * @return void
      */
-    public function register() : void
+    public function register(): void
     {
         parent::register();
 
         // Merge configs
         $this->mergeConfigFrom(
-            __DIR__ . '/../../config/logic_captcha.php', 'logic_captcha'
+            __DIR__ . '/../../config/logic_captcha.php',
+            'logic_captcha'
         );
 
         // Merge config with Mews\Captcha

@@ -2,14 +2,11 @@
 
 namespace N1ebieski\LogicCaptcha\Rules;
 
-use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Contracts\Validation\Rule;
 
-/**
- * [Recaptcha_v2 description]
- */
 class LogicCaptchaApiRule implements Rule
 {
     /**
@@ -47,12 +44,14 @@ class LogicCaptchaApiRule implements Rule
      * @param  mixed  $value
      * @return bool
      */
-    public function passes($attribute, $value) : bool
+    public function passes($attribute, $value): bool
     {
         foreach ((array)$this->key as $key) {
             $check = Hash::check(Str::lower($value), $key);
 
-            if ($check) break;
+            if ($check) {
+                break;
+            }
         }
 
         return $check ?? false;
@@ -65,6 +64,6 @@ class LogicCaptchaApiRule implements Rule
      */
     public function message()
     {
-        return trans('logic_captcha::validation.failed');
+        return trans('logic-captcha::validation.failed');
     }
 }
